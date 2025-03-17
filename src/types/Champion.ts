@@ -1,9 +1,9 @@
-interface Champion {
+export interface Champion {
   name: string;
   title: string;
 }
 
-interface ChampionDetail extends Champion {
+export interface ChampionDetail extends Champion {
   blurb: string;
   info: {
     attack: number;
@@ -13,4 +13,3 @@ interface ChampionDetail extends Champion {
   };
 }
 
-export type { Champion, ChampionDetail };
