@@ -3,7 +3,7 @@ interface Champion {
   title: string;
 }
 
-interface ChampionInfo extends Champion {
+interface ChampionDetail extends Champion {
   blurb: string;
   info: {
     attack: number;
@@ -12,3 +12,5 @@ interface ChampionInfo extends Champion {
     difficulty: number;
   };
 }
+
+export type { Champion, ChampionDetail };
