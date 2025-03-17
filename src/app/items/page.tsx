@@ -2,7 +2,7 @@ import React from 'react'
 
 const ItemsPage = () => {
   return (
-    <div>ItemsPage</div>
+    <div>아이템 목록</div>
   )
 }
 
