@@ -1,14 +1,19 @@
-import React from "react";
+// src/app/champions/page.tsx
+import { ChampionCard } from "@/components/ChampionCard";
+import { Champion } from "@/types/Champion";
+import { fetchChampionList } from "@/utils/serverApi";
 
-export const getStaticProps = async () => {
-  const res = await fetch(
-    "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json"
-  );
-  const data = await res.json;
+
+export default async function ChampionsPage() {
+  const champions: Champion[] = await fetchChampionList();
+  return (
+  <div>
+    <h1>챔피언 목록</h1>
+    <div>
+      {champions.map((champion) => (
+        <ChampionCard key={champion.id} {...champion} />
+  ))}
+    </div>
+    </div>);
 };
 
-const ChampionsPage = () => {
-  return <div>챔피언 목록</div>;
-};
-
-export default ChampionsPage;
