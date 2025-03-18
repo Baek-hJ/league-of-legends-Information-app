@@ -1,19 +1,20 @@
 // src/app/items/page.tsx
-"use client";
+// ssg 렌더링
 
 import { ItemCard } from "@/components/ItemCard";
-import { useItemDataQuery } from "../../../query/useItemDataQuery";
+import { Item } from "@/types/Item";
+import { fetchItemList } from "@/utils/serverApi";
 
-const ItemsPage = () => {
-  const { data: ItemsPage } = useItemDataQuery();
+export default async function ItemsPage() {
+  const items: Item[] = await fetchItemList();
 
-  if (!ItemsPage) return <div>로딩 중...</div>;
+  if (!items) return <div>로딩 중...</div>;
 
   return (
     <div>
       <h1 className="header-container">아이템 목록</h1>
       <div className="item-card-container">
-        {ItemsPage.map((item) => (
+        {items.map((item) => (
           <ItemCard key={item.name} {...item} />
         ))}
       </div>
@@ -21,4 +22,4 @@ const ItemsPage = () => {
   );
 };
 
-export default ItemsPage;
+
