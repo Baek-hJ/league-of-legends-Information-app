@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./globals.css";
+import Providers from "./providers";
 
 
 
@@ -11,6 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Providers>
         <nav>
           <Link href={"/"}>홈</Link>
           <Link href={"/champions"}>챔피언 목록</Link>
@@ -18,6 +20,7 @@ export default function RootLayout({
           <Link href={"/items"}>아이템 목록</Link>
         </nav>
         {children}
+        </Providers>
       </body>
     </html>
   );
