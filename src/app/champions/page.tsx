@@ -2,11 +2,11 @@
 "use client";
 
 import { ChampionCard } from "@/components/ChampionCard";
-import { useDataQuery } from "../../../query/useDataQuery";
+import { useChampionDataQuery } from "../../../query/useDataQuery";
 
 
 const ChampionsPage = () => {
-  const { data: champions } = useDataQuery();
+  const { data: champions } = useChampionDataQuery();
 
   if (!champions) return <div>로딩 중...</div>;
 
