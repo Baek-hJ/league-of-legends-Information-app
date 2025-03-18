@@ -2,7 +2,9 @@
 
 export interface Champion {
   id: string;
-  image: string;
+  image: {
+    full: string
+  };
   name: string;
   title: string;
 }
