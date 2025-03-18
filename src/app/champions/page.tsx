@@ -2,8 +2,8 @@
 "use client";
 
 import { ChampionCard } from "@/components/ChampionCard";
-// import { Champion } from "@/types/Champion";
 import { useDataQuery } from "../../../query/useDataQuery";
+
 
 const ChampionsPage = () => {
   const { data: champions } = useDataQuery();
@@ -14,11 +14,9 @@ const ChampionsPage = () => {
     <div>
       <h1>챔피언 목록</h1>
       <div>
-        <li>
           {champions.map((champion) => (
             <ChampionCard key={champion.id} {...champion} />
           ))}
-        </li>
       </div>
     </div>
   );
