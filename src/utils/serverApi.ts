@@ -1,11 +1,14 @@
 // src/utils/serverApi.ts
 
 import { Champion, ChampionDetail } from "@/types/Champion";
+import { Item } from "@/types/Item";
 
 const API_URL =
   "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/champion.json";
 const IMAGE_BASE_URL =
-  "http://ddragon.leagueoflegends.com/cdn/15.5.1/img/champion/";
+  "http://ddragon.leagueoflegends.com/cdn/15.5.1/img";
+
+const ITEM_API_URL = "https://ddragon.leagueoflegends.com/cdn/15.5.1/data/ko_KR/item.json"
 
 // 챔피언 목록 가져오기
 export const fetchChampionList = async (): Promise<Champion[]> => {
@@ -19,7 +22,7 @@ export const fetchChampionList = async (): Promise<Champion[]> => {
     name: champion.name,
     title: champion.title,
     image: {
-      full: `${IMAGE_BASE_URL}${champion.image.full}`,
+      full: `${IMAGE_BASE_URL}/champion/${champion.image.full}`,
     },
   }));
 };
@@ -41,9 +44,26 @@ export const fetchChampionDetail = async (
     name: champion.name,
     title: champion.title,
     image: {
-      full: `${IMAGE_BASE_URL}${champion.image.full}`,
+      full: `${IMAGE_BASE_URL}/champion/${champion.image.full}`,
     },
     blurb: champion.blurb,
     info: champion.info,
   };
 };
+
+
+// 아이템 목록 가져오기
+export const fetchItemList = async (): Promise<Item[]> => {
+  const res = await fetch(ITEM_API_URL);
+  const data = await res.json();
+
+  const itemsData: Record<string, Item> = data.data;
+
+  return Object.values(itemsData).map((item) => ({
+    name: item.name,
+    plaintext: item.plaintext,
+    image: {
+      full: `${IMAGE_BASE_URL}/item/${item.image.full}`,
+    },
+  }));
+}
