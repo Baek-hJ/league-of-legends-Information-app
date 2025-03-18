@@ -1,8 +1,8 @@
 // src/app/champions/[id]/page.tsx
-
 import { fetchChampionDetail } from "@/utils/serverApi";
 import { ChampionDetail } from "@/types/Champion";
 import Image from "next/image";
+import Head from "next/head";
 
 export default async function ChampionDetailPage({
   params,
@@ -17,10 +17,19 @@ export default async function ChampionDetailPage({
 
   return (
     <div className="container mx-auto p-8 text-center">
+
+      <Head>
+        <title>{champion.id} - 상세 정보</title>
+        <meta name="description" content={champion.blurb} />
+        <meta name="og:title" content={champion.name} />
+        <meta name="og:description" content={champion.blurb} />
+        <meta name="og:image" content={champion.image.full} />
+      </Head>
+
       <h1 className="text-3xl font-bold">{champion.name}</h1>
       <p className="text-lg text-gray-600">{champion.title}</p>
       <Image
-        src={champion.image}
+        src={champion.image.full}
         alt={champion.name}
         width={240}
         height={240}
