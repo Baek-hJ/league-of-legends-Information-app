@@ -14,9 +14,11 @@ const ChampionsPage = () => {
     <div>
       <h1>챔피언 목록</h1>
       <div>
-        {champions.map((champion) => (
-          <ChampionCard key={champion.id} {...champion} />
-        ))}
+        <li>
+          {champions.map((champion) => (
+            <ChampionCard key={champion.id} {...champion} />
+          ))}
+        </li>
       </div>
     </div>
   );
