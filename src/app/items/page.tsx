@@ -1,3 +1,4 @@
+// src/app/items/page.tsx
 import React from 'react'
 
 const ItemsPage = () => {
