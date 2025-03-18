@@ -4,8 +4,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8f8f8;
-  --foreground: #171717;
+  --background: #04111a;
+  --foreground: rgb(255, 255, 255, 0.8);
 }
 
 body {
@@ -15,28 +15,49 @@ body {
 }
 
 .nav {
-background-color: rgb(26, 38, 43);
+background-color:#04111a;
 min-height: 50px;
 display: flex;
 justify-content:space-around;
 color: white;
-align-items: center
+align-items: center;
+border-bottom: 1px solid rgb(255, 255, 255, 0.3);
 }
 
 .home-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 800px;
   width: 100%;
-  background-image: linear-gradient(
+  background-image: 
+  linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0)
+      rgb(4, 16, 25, 1) 10%,
+      rgb(4, 16, 25, 0) 100%
     ),
-    /* 그라데이션 오버레이 */
-      url("https://www.pixground.com/wp-content/uploads/2023/11/Winterblessed-Hwei-Skin-League-Of-Legends-4K-Wallpaper-1081x608.jpg"); /* 배경 이미지 */
+      url("https://www.pixground.com/mythmaker-irelia-skin-league-of-legends-4k-wallpaper/?download-img=2k&preview=yes");
   background-size: cover;
   background-position: center;
-  /* margin-top: 100px; */
+}
+
+.home-h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.home-p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255, 0.8);
+  font-size: 20px;
+  text-align: center;
 }
 
 @layer utilities {
