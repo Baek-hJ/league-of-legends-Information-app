@@ -78,12 +78,23 @@ border-bottom: 1px solid rgb(255, 255, 255, 0.3);
 }
 
 .card-container {
-  margin-inline: 6rem;
+  margin-inline: 5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 2rem;
 }
 
+.item-card-container {
+  margin: 0 5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 2rem;
+}
+
+.item-card-container .block{
+  height: 200px;
+  width: 200px;
+}
 
 @layer utilities {
   .text-balance {
