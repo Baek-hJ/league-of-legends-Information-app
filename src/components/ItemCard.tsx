@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const ItemCard = ({ image, name, plaintext }: Item) => {
   return (
-    <div>
+    <div className="block p-4 border rounded-lg hover:shadow-lg transition">
       <Image
         src={image.full}
         alt={name}
