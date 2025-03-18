@@ -11,4 +11,4 @@ const ItemsPage = () => {
   )
 }
 
-export default ItemsPage
+export default ItemsPage;
