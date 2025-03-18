@@ -12,8 +12,8 @@ const ChampionsPage = () => {
 
   return (
     <div>
-      <h1>챔피언 목록</h1>
-      <div>
+      <h1 className="header-container">챔피언 목록</h1>
+      <div className="card-container">
           {champions.map((champion) => (
             <ChampionCard key={champion.id} {...champion} />
           ))}
