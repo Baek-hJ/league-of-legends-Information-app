@@ -1,12 +1,25 @@
 // src/app/items/page.tsx
-import React from 'react'
+"use client";
+
+import { ItemCard } from '@/components/ItemCard';
+import { useItemDataQuery } from '../../../query/useItemDataQuery';
 
 const ItemsPage = () => {
+
+  const { data: ItemsPage } = useItemDataQuery();
+
+  if (!ItemsPage) return <div>로딩 중...</div>;
+
   return (
     <div>
       <h1 className='header-container'>
       아이템 목록
       </h1>
+      <div>
+        {ItemsPage.map((item) => (
+          <ItemCard key={item.name} {...item} />
+        ))}
+      </div>
       </div>
   )
 }
