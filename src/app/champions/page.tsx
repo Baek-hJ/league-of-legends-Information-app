@@ -1,8 +1,8 @@
 // src/app/champions/page.tsx
 "use client";
 
-import { ChampionCard } from "@/components/ChampionCard";
-import { useChampionDataQuery } from "../../../query/useDataQuery";
+import { Card } from "@/components/Card";
+import { useChampionDataQuery } from "../../../query/useChampionDataQuery";
 
 
 const ChampionsPage = () => {
@@ -15,7 +15,7 @@ const ChampionsPage = () => {
       <h1 className="header-container">챔피언 목록</h1>
       <div className="card-container">
           {champions.map((champion) => (
-            <ChampionCard key={champion.id} {...champion} />
+            <Card key={champion.id} {...champion} />
           ))}
       </div>
     </div>
