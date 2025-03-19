@@ -1,3 +1,5 @@
+// src/app/champions/page.tsx
+
 import { fetchChampionList } from "@/utils/serverApi";
 import { ChampionCard } from "@/components/ChampionCard";
 
