@@ -1,25 +1,19 @@
-// src/app/champions/page.tsx
-"use client";
-
+import { fetchChampionList } from "@/utils/serverApi";
 import { ChampionCard } from "@/components/ChampionCard";
-import { useChampionDataQuery } from "../../../query/useChampionDataQuery";
 
+export const revalidate = 86400; // ISR 적용 (하루마다 재생성)
 
-const ChampionsPage = () => {
-  const { data: champions } = useChampionDataQuery();
-
-  if (!champions) return <div>로딩 중...</div>;
+export default async function ChampionsPage() {
+  const champions = await fetchChampionList();
 
   return (
     <div>
       <h1 className="header-container">챔피언 목록</h1>
       <div className="card-container">
-          {champions.map((champion) => (
-            <ChampionCard key={champion.id} {...champion} />
-          ))}
+        {champions.map((champion) => (
+          <ChampionCard key={champion.id} {...champion} />
+        ))}
       </div>
     </div>
   );
-};
-
-export default ChampionsPage;
+}
