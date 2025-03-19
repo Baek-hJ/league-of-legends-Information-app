@@ -132,7 +132,6 @@ vercel
 - ✅ Riot Games API를 활용하여 동적인 데이터 제공
 - ✅ Next.js의 ISR, SSR, CSR, SSG 렌더링 방식을 활용
 - ✅ React Query와 Server Actions로 최적화된 데이터 페칭 구현
-- ✅ Tailwind CSS를 이용한 반응형 UI 디자인
 
 ---
 
