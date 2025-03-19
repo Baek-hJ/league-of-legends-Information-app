@@ -23,41 +23,75 @@ color: white;
 align-items: center;
 border-bottom: 1px solid rgb(255, 255, 255, 0.3);
 }
-
 .home-container {
   position: relative;
-  min-height: 800px;
+  min-height: 100vh;
   width: 100%;
-  background-image: 
-  linear-gradient(
+  background-image: linear-gradient(
       to top,
-      rgb(4, 16, 25, 1) 10%,
-      rgb(4, 16, 25, 0) 100%
+      rgba(4, 16, 25, 1) 10%,
+      rgba(4, 16, 25, 0) 100%
     ),
-      url("https://www.pixground.com/mythmaker-irelia-skin-league-of-legends-4k-wallpaper/?download-img=2k&preview=yes");
+    url("https://www.pixground.com/mythmaker-irelia-skin-league-of-legends-4k-wallpaper/?download-img=2k&preview=yes");
   background-size: cover;
   background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* 텍스트 컨테이너 */
+.home-text {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 제목 스타일 */
 .home-h1 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: white;
   font-size: 50px;
   font-weight: 700;
   text-align: center;
 }
 
-.home-p{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255, 0.8);
+.home-p {
+  color: rgba(255, 255, 255, 0.8);
   font-size: 20px;
   text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* 링크 카드 컨테이너 */
+.link-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 80%;
+}
+
+/* 링크 카드 스타일 */
+.link-card {
+  width: 280px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* 호버 효과 */
+.link-card:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .header-container{
