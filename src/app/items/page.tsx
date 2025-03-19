@@ -1,14 +1,11 @@
 // src/app/items/page.tsx
 // ssg 렌더링
 
-import { ItemCard } from "@/components/ItemCard";
-import { Item } from "@/types/Item";
 import { fetchItemList } from "@/utils/serverApi";
+import { ItemCard } from "@/components/ItemCard";
 
 export default async function ItemsPage() {
-  const items: Item[] = await fetchItemList();
-
-  if (!items) return <div>로딩 중...</div>;
+  const items = await fetchItemList();
 
   return (
     <div>
@@ -20,6 +17,7 @@ export default async function ItemsPage() {
       </div>
     </div>
   );
-};
+}
+
 
 
